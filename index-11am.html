@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Invitación Especial (11:00 AM) | Presentación de Proyectos - UMG Quetzaltenango</title>
+  
+  <meta name="description" content="Invitación Especial a la Presentación de Proyectos e Innovación Tecnológica de la Facultad de Ingeniería en Sistemas - UMG Quetzaltenango. 11:00 AM.">
+  <meta name="theme-color" content="#5C061D">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Cinzel:wght@600;700;800&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. VARIABLES CSS - PALETA INSTITUCIONAL UMG ESTRICTA
+       ========================================================================== */
+    :root {
+      --bg-cream: #FBF8F3;
+      --bg-card: #FFFFFF;
+      --primary-wine: #5C061D;
+      --primary-wine-dark: #4A0E17;
+      --primary-wine-light: #7A122A;
+      --gold-academic: #B89047;
+      --border-subtle: rgba(92, 6, 29, 0.14);
+      --border-gold-subtle: rgba(184, 144, 71, 0.4);
+      --surface-subtle: #F6F1EA;
+      --text-dark: #2B2123;
+      --text-muted: #5C5254;
+      --text-subtle: #7D7375;
+      --font-serif: 'Cinzel', Georgia, serif;
+      --font-quote: 'Playfair Display', Georgia, serif;
+      --font-body: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-script: 'Caveat', cursive;
+      --radius-card: 16px;
+      --radius-sm: 10px;
+      --shadow-clean: 0 4px 18px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+      --shadow-btn: 0 6px 18px rgba(92, 6, 29, 0.22);
+      --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-cream);
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background-color: var(--bg-cream);
+      background-image: 
+        radial-gradient(rgba(184, 144, 71, 0.28) 0.6px, transparent 0.6px),
+        radial-gradient(rgba(92, 6, 29, 0.03) 0.6px, var(--bg-cream) 0.6px);
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      touch-action: manipulation;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ==========================================================================
+       2. PRELOADER ELEGANTE VINO TINTO
+       ========================================================================== */
+    #preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background-color: var(--primary-wine-dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s var(--ease-smooth), transform 0.6s var(--ease-smooth);
+      transform: translate3d(0, 0, 0);
+      will-change: opacity, transform;
+    }
+
+    #preloader.loaded {
+      opacity: 0;
+      transform: translate3d(0, -25px, 0);
+      pointer-events: none;
+    }
+
+    .preloader-emblem {
+      position: relative;
+      width: 76px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+
+    .preloader-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top-color: var(--gold-academic);
+      border-right-color: rgba(184, 144, 71, 0.4);
+      animation: spinRing 1.1s linear infinite;
+    }
+
+    .preloader-monogram {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #5C061D;
+      border: 1.5px solid var(--gold-academic);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-academic);
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .preloader-text {
+      color: #E8D5B5;
+      font-family: var(--font-body);
+      font-size: 0.84rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      animation: pulseText 1.6s ease-in-out infinite alternate;
+    }
+
+    @keyframes spinRing {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes pulseText {
+      0% { opacity: 0.45; }
+      100% { opacity: 0.95; }
+    }
+
+    /* ==========================================================================
+       3. CONTENEDOR PRINCIPAL
+       ========================================================================== */
+    .main-viewport {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 14px 12px 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* Tarjetas limpias institucionales con ancho homogéneo al 100% */
+    .card-clean {
+      position: relative;
+      width: 100%;
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-clean);
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Esquinas doradas interiores */
+    .frame-corner {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      border-color: var(--border-gold-subtle);
+      border-style: solid;
+      pointer-events: none;
+    }
+    .fc-tl { top: 7px; left: 7px; border-width: 1.5px 0 0 1.5px; }
+    .fc-tr { top: 7px; right: 7px; border-width: 1.5px 1.5px 0 0; }
+    .fc-bl { bottom: 7px; left: 7px; border-width: 0 0 1.5px 1.5px; }
+    .fc-br { bottom: 7px; right: 7px; border-width: 0 1.5px 1.5px 0; }
+
+    /* ==========================================================================
+       4. CINEMÁTICA DE SCROLL: FADE-IN DESDE ABAJO Y FADE-UP HACIA ARRIBA
+       ========================================================================== */
+    .scroll-stage {
+      width: 100%;
+      opacity: 0;
+      transform: translate3d(0, 28px, 0);
+      transition: opacity 0.5s ease-out, transform 0.5s var(--ease-smooth);
+      will-change: opacity, transform;
+      margin-bottom: 16px;
+    }
+
+    .scroll-stage.is-active {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    .scroll-stage.is-faded-up {
+      opacity: 0;
+      transform: translate3d(0, -32px, 0);
+      pointer-events: none;
+    }
+
+    /* ==========================================================================
+       5. ESCENA 1: LOGO INSTITUCIONAL EN PRIMER PLANO (GRANDE)
+       ========================================================================== */
+    .stage-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 6px 0;
+    }
+
+    .logo-hero-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .logo-umg-large {
+      width: clamp(190px, 55vw, 230px);
+      height: clamp(190px, 55vw, 230px);
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 4px 10px rgba(92, 6, 29, 0.12));
+      transition: transform 0.3s var(--ease-smooth);
+    }
+
+    .logo-umg-large:hover {
+      transform: scale(1.02);
+    }
+
+    .hero-inst-title {
+      font-family: var(--font-serif);
+      color: var(--primary-wine);
+      font-size: clamp(1.02rem, 3.8vw, 1.25rem);
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      line-height: 1.35;
+      text-transform: uppercase;
+      max-width: 440px;
+      margin-bottom: 8px;
+    }
+
+    .hero-inst-faculty {
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      font-size: clamp(0.8rem, 2.7vw, 0.9rem);
+      font-weight: 500;
+      line-height: 1.4;
+      max-width: 420px;
+      margin-bottom: 12px;
+    }
+
+    .hero-inst-campus {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary-wine);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      background: var(--surface-subtle);
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    /* ==========================================================================
+       6. INDICADOR FLOTANTE "DESLICE HACIA ABAJO" (2s RETARDO)
+       ========================================================================== */
+    .scroll-hint-floating {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translate3d(-50%, 20px, 0);
+      z-index: 990;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #FFFFFF;
+      color: var(--primary-wine);
+      border: 1.5px solid var(--primary-wine);
+      padding: 9px 18px;
+      border-radius: 30px;
+      box-shadow: 0 8px 24px rgba(92, 6, 29, 0.18), 0 2px 6px rgba(0,0,0,0.06);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s var(--ease-smooth), transform 0.5s var(--ease-smooth), visibility 0.5s;
+      pointer-events: none;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .scroll-hint-floating.show-hint {
+      opacity: 1;
+      visibility: visible;
+      transform: translate3d(-50%, 0, 0);
+      pointer-events: auto;
+    }
+
+    .scroll-hint-text {
+      font-size: 0.76rem;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .scroll-hint-arrow {
+      width: 17px;
+      height: 17px;
+      color: var(--primary-wine);
+      animation: bounceDownAnim 1.6s infinite ease-in-out;
+      flex-shrink: 0;
+    }
+
+    @keyframes bounceDownAnim {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(5px); }
+      60% { transform: translateY(2px); }
+    }
+
+    /* ==========================================================================
+       7. ESCENA 2: TÍTULO CENTRAL ("PRESENTACIÓN DE PROYECTOS...")
+       ========================================================================== */
+    .badge-invitation {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    .badge-line {
+      height: 1px;
+      flex: 1;
+      max-width: 60px;
+      background: linear-gradient(90deg, transparent, var(--border-gold-subtle));
+    }
+
+    .badge-line.right {
+      background: linear-gradient(90deg, var(--border-gold-subtle), transparent);
+    }
+
+    .badge-text {
+      font-family: var(--font-serif);
+      color: var(--gold-academic);
+      font-size: clamp(0.76rem, 2.4vw, 0.84rem);
+      font-weight: 700;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+    }
+
+    .main-title {
+      font-family: var(--font-serif);
+      color: var(--primary-wine);
+      font-size: clamp(1.12rem, 4.2vw, 1.42rem);
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: 0.4px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .tagline {
+      font-family: var(--font-quote);
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: clamp(0.86rem, 2.8vw, 1rem);
+      line-height: 1.4;
+    }
+
+    .ornament-separator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 12px 0 2px;
+      gap: 8px;
+    }
+
+    .ornament-line {
+      height: 1px;
+      width: 40px;
+      background: var(--border-gold-subtle);
+    }
+
+    .ornament-diamond {
+      width: 6px;
+      height: 6px;
+      background: var(--gold-academic);
+      transform: rotate(45deg);
+    }
+
+    /* ==========================================================================
+       8. ESCENA 3: PÁRRAFO DESCRIPTIVO
+       ========================================================================== */
+    .description-text {
+      font-size: clamp(0.85rem, 2.6vw, 0.93rem);
+      line-height: 1.7;
+      color: var(--text-dark);
+      text-align: justify;
+      font-weight: 400;
+      text-justify: inter-word;
+    }
+
+    /* ==========================================================================
+       9. ESCENA 4: FECHA Y RECORDATORIO AUTOMÁTICO (HORA: 11:00 AM)
+       ========================================================================== */
+    .stage-event-details {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .date-action-card {
+      cursor: pointer;
+      transition: transform 0.25s var(--ease-smooth), box-shadow 0.25s var(--ease-smooth);
+    }
+
+    .date-action-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(92, 6, 29, 0.12);
+      border-color: var(--primary-wine);
+    }
+
+    .date-action-card.auto-press {
+      animation: calendarAutoPress 1.3s cubic-bezier(0.2, 0.8, 0.2, 1) 2;
+    }
+
+    @keyframes calendarAutoPress {
+      0%, 100% { transform: scale(1); box-shadow: var(--shadow-clean); }
+      40% { transform: scale(0.96); box-shadow: 0 4px 14px rgba(92, 6, 29, 0.2); border-color: var(--primary-wine); }
+      70% { transform: scale(1.01); box-shadow: 0 8px 22px rgba(92, 6, 29, 0.14); }
+    }
+
+    .feature-icon-badge {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: var(--surface-subtle);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-wine);
+      margin-bottom: 10px;
+      box-shadow: 0 3px 8px rgba(92, 6, 29, 0.06);
+      flex-shrink: 0;
+    }
+
+    .calendar-icon-svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .date-day-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--primary-wine);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .date-main-number {
+      font-family: var(--font-serif);
+      font-size: clamp(1.15rem, 3.8vw, 1.35rem);
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .date-sub-text {
+      font-size: 0.84rem;
+      color: var(--primary-wine);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .date-note-subtle {
+      font-size: 0.76rem;
+      color: var(--text-subtle);
+      font-style: italic;
+      margin-bottom: 14px;
+    }
+
+    .btn-add-calendar {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--surface-subtle);
+      color: var(--primary-wine);
+      border: 1.5px solid var(--primary-wine);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.3px;
+      width: 100%;
+      max-width: 300px;
+      transition: all 0.2s ease;
+      touch-action: manipulation;
+    }
+
+    .btn-add-calendar:hover, .btn-add-calendar:active {
+      background: var(--primary-wine);
+      color: #FFFFFF;
+      transform: scale(0.98);
+    }
+
+    .btn-add-calendar svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       10. ESCENA 5: UBICACIÓN Y BOTONES DIRECTOS INTEGRADOS
+       ========================================================================== */
+    .location-icon-svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .location-header-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--primary-wine);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .location-place-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.05rem, 3.6vw, 1.22rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.35;
+      margin-bottom: 4px;
+    }
+
+    .location-address-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      font-weight: 500;
+      max-width: 380px;
+      margin-bottom: 16px;
+    }
+
+    .location-nav-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .nav-btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: clamp(0.84rem, 2.6vw, 0.92rem);
+      letter-spacing: 0.3px;
+      cursor: pointer;
+      border: 1px solid transparent;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+      touch-action: manipulation;
+      will-change: transform;
+    }
+
+    .nav-btn:active {
+      transform: translateY(1px) scale(0.985) !important;
+    }
+
+    .btn-maps {
+      background-color: var(--primary-wine);
+      color: #FFFFFF;
+      box-shadow: var(--shadow-btn);
+    }
+
+    .btn-maps:hover {
+      background-color: var(--primary-wine-light);
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 8px 22px rgba(92, 6, 29, 0.28);
+    }
+
+    .btn-waze {
+      background-color: var(--surface-subtle);
+      color: var(--primary-wine);
+      border: 1.5px solid var(--primary-wine);
+    }
+
+    .btn-waze:hover {
+      background-color: #ECE5DC;
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 6px 16px rgba(92, 6, 29, 0.1);
+    }
+
+    .btn-icon {
+      width: 19px;
+      height: 19px;
+      flex-shrink: 0;
+      fill: currentColor;
+    }
+
+    /* ==========================================================================
+       11. CIERRE CON "¡TE ESPERAMOS!" CON RECUADRO JUSTO ENCIMA
+       ========================================================================== */
+    .closure-card-tight {
+      width: 100%;
+      background: var(--bg-card);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-clean);
+      padding: 16px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .architectural-silhouette {
+      width: 100%;
+      max-width: 280px;
+      height: 28px;
+      opacity: 0.22;
+      color: var(--primary-wine);
+      margin-bottom: 4px;
+      pointer-events: none;
+    }
+
+    .handwritten-sign-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2px 0 6px;
+    }
+
+    .handwritten-sign {
+      font-family: var(--font-script);
+      color: var(--primary-wine);
+      font-size: clamp(2rem, 6.5vw, 2.45rem);
+      font-weight: 700;
+      line-height: 1.05;
+      transform: rotate(-2deg);
+      display: inline-block;
+      text-shadow: 0 1px 3px rgba(92, 6, 29, 0.08);
+      margin: 0;
+    }
+
+    .closure-inner-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--border-gold-subtle);
+      margin: 6px 0 8px;
+    }
+
+    .closure-inst-text {
+      font-size: 0.72rem;
+      letter-spacing: 1.4px;
+      color: var(--text-subtle);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    /* Toast de Recordatorio */
+    #calendarToast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translate3d(-50%, 40px, 0);
+      background: #4A0E17;
+      color: #FFFFFF;
+      padding: 11px 20px;
+      border-radius: 30px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      border: 1px solid var(--gold-academic);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+      z-index: 10000;
+      opacity: 0;
+      transition: all 0.35s var(--ease-smooth);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #calendarToast.show {
+      opacity: 1;
+      transform: translate3d(-50%, 0, 0);
+    }
+
+    /* ==========================================================================
+       12. PANTALLAS DINÁMICAS POR FECHA Y HORA (100% AUTOMÁTICAS)
+       ========================================================================== */
+    .special-day-view {
+      display: none;
+      min-height: 88vh;
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 20px 14px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .special-card {
+      position: relative;
+      width: 100%;
+      background: #FFFFFF;
+      border-radius: var(--radius-card);
+      border: 1.5px solid var(--border-subtle);
+      box-shadow: 0 6px 26px rgba(92, 6, 29, 0.09);
+      padding: clamp(28px, 7vw, 42px) clamp(18px, 5vw, 28px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .special-badge-es-hoy {
+      font-family: var(--font-serif);
+      font-size: clamp(2.6rem, 10vw, 3.8rem);
+      font-weight: 800;
+      color: var(--primary-wine);
+      letter-spacing: 3px;
+      line-height: 1.05;
+      margin: 16px 0 10px;
+      text-transform: uppercase;
+      text-shadow: 0 3px 12px rgba(92, 6, 29, 0.15);
+      animation: pulseToday 2.2s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseToday {
+      0% { transform: scale(0.98); }
+      100% { transform: scale(1.02); }
+    }
+
+    .special-thanks-text {
+      font-family: var(--font-quote);
+      font-size: clamp(1.35rem, 5vw, 1.75rem);
+      font-weight: 700;
+      color: var(--primary-wine);
+      line-height: 1.35;
+      margin: 20px 0 12px;
+      font-style: italic;
+    }
+
+    .special-sub-text {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      font-weight: 500;
+      max-width: 380px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       1. PANTALLA DE CARGA (PRELOADER ELEGANTE)
+       ========================================== -->
+  <div id="preloader" role="status" aria-live="polite" aria-label="Cargando invitación">
+    <div class="preloader-emblem">
+      <div class="preloader-ring"></div>
+      <div class="preloader-monogram">UMG</div>
+    </div>
+    <div class="preloader-text">Cargando invitación...</div>
+  </div>
+
+  <!-- ==========================================
+       2. INDICADOR FLOTANTE "DESLICE HACIA ABAJO"
+       ========================================== -->
+  <div class="scroll-hint-floating" id="scrollHint" role="button" tabindex="0" aria-label="Desplazarse hacia abajo">
+    <span class="scroll-hint-text">Deslice hacia abajo</span>
+    <svg class="scroll-hint-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+  </div>
+
+  <!-- ==========================================
+       3. PANTALLA DINÁMICA: "¡ES HOY!" (AUTOMÁTICA)
+       ========================================== -->
+  <div class="special-day-view" id="viewEsHoy">
+    <div class="special-card">
+      <span class="frame-corner fc-tl" aria-hidden="true"></span>
+      <span class="frame-corner fc-tr" aria-hidden="true"></span>
+      <span class="frame-corner fc-bl" aria-hidden="true"></span>
+      <span class="frame-corner fc-br" aria-hidden="true"></span>
+
+      <!-- Logo de la Universidad -->
+      <img 
+        src="img/logo-umg.png" 
+        alt="Logo Universidad Mariano Gálvez" 
+        class="logo-umg-large"
+        width="210"
+        height="210"
+      >
+
+      <p class="hero-inst-title" style="margin-top: 14px;">Universidad Mariano Gálvez de Guatemala</p>
+      <p class="hero-inst-faculty">Facultad de Ingeniería en Sistemas de Información</p>
+
+      <!-- Título Principal -->
+      <h1 class="main-title" style="margin-top: 14px;">Presentación de Proyectos e Innovación Tecnológica</h1>
+
+      <!-- ¡ES HOY! -->
+      <div class="special-badge-es-hoy">¡ES HOY!</div>
+
+      <p class="special-sub-text">
+        <strong>Hora de inicio: 11:00 AM</strong> (favor estar presente minutos antes)<br>
+        El Rinconcito Español, Museo del Jamón &bull; Quetzaltenango<br>
+        Te esperamos para compartir los logros y el impacto del talento de nuestros estudiantes.
+      </p>
+
+      <!-- Botón directo de ruta -->
+      <a 
+        href="https://www.google.com/maps/dir/?api=1&destination=14.85406128,-91.52137348&destination_place_id=ChIJwWv3M_yjiYURzO9WKvU8y0Q" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="nav-btn btn-maps"
+        style="max-width: 320px;"
+      >
+        <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+        </svg>
+        <span>Ruta en Google Maps</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       4. PANTALLA DINÁMICA: "GRACIAS POR SER PARTE..." (AUTOMÁTICA A LAS 6 PM)
+       ========================================== -->
+  <div class="special-day-view" id="viewGracias">
+    <div class="special-card">
+      <span class="frame-corner fc-tl" aria-hidden="true"></span>
+      <span class="frame-corner fc-tr" aria-hidden="true"></span>
+      <span class="frame-corner fc-bl" aria-hidden="true"></span>
+      <span class="frame-corner fc-br" aria-hidden="true"></span>
+
+      <!-- Logo de la Universidad -->
+      <img 
+        src="img/logo-umg.png" 
+        alt="Logo Universidad Mariano Gálvez" 
+        class="logo-umg-large"
+        width="210"
+        height="210"
+      >
+
+      <p class="hero-inst-title" style="margin-top: 14px;">Universidad Mariano Gálvez de Guatemala</p>
+      <p class="hero-inst-faculty">Facultad de Ingeniería en Sistemas de Información</p>
+
+      <!-- Título Principal -->
+      <h1 class="main-title" style="margin-top: 14px;">Presentación de Proyectos e Innovación Tecnológica</h1>
+
+      <!-- Mensaje de Agradecimiento a las 6:00 PM -->
+      <div class="special-thanks-text">
+        “Gracias por ser parte de la innovación tecnológica.”
+      </div>
+
+      <p class="special-sub-text">
+        Agradecemos profundamente su grata compañía y el apoyo brindado a nuestros estudiantes en la presentación de sus proyectos tecnológicos.
+      </p>
+
+      <div class="handwritten-sign" style="font-size: 2.3rem; color: var(--primary-wine);">
+        ¡Hasta la próxima!
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       5. VISTA DE INVITACIÓN NORMAL (FLUJO CONTINUO Y CEÑIDO)
+       ========================================== -->
+  <main class="main-viewport" id="mainContainer">
+
+    <!-- ==============================================================
+         ETAPA 1: LOGO DE LA UNIVERSIDAD EN PRIMER PLANO (GRANDE)
+         ============================================================== -->
+    <section class="scroll-stage stage-hero is-active" id="stageHero">
+      <div class="card-clean">
+        
+        <span class="frame-corner fc-tl" aria-hidden="true"></span>
+        <span class="frame-corner fc-tr" aria-hidden="true"></span>
+        <span class="frame-corner fc-bl" aria-hidden="true"></span>
+        <span class="frame-corner fc-br" aria-hidden="true"></span>
+
+        <!-- Logo en Primer Plano (GRANDE Y NÍTIDO) -->
+        <div class="logo-hero-container">
+          <img 
+            src="img/logo-umg.png" 
+            alt="Logo oficial de la Universidad Mariano Gálvez de Guatemala" 
+            class="logo-umg-large"
+            width="230"
+            height="230"
+            loading="eager"
+            onerror="this.onerror=null; this.src='LOGOUMG.jpg';"
+          >
+        </div>
+
+        <h1 class="hero-inst-title">Universidad Mariano Gálvez de Guatemala</h1>
+        <p class="hero-inst-faculty">Facultad de Ingeniería en Sistemas de Información y Ciencias de la Computación</p>
+        <span class="hero-inst-campus">Campus Quetzaltenango</span>
+
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         ETAPA 2: TÍTULO CENTRAL ("PRESENTACIÓN DE PROYECTOS...")
+         ============================================================== -->
+    <section class="scroll-stage stage-title" id="stageTitle">
+      <div class="card-clean">
+        
+        <span class="frame-corner fc-tl" aria-hidden="true"></span>
+        <span class="frame-corner fc-tr" aria-hidden="true"></span>
+        <span class="frame-corner fc-bl" aria-hidden="true"></span>
+        <span class="frame-corner fc-br" aria-hidden="true"></span>
+
+        <div class="badge-invitation">
+          <span class="badge-line" aria-hidden="true"></span>
+          <span class="badge-text">Invitación Especial</span>
+          <span class="badge-line right" aria-hidden="true"></span>
+        </div>
+
+        <h2 class="main-title">Presentación de Proyectos e Innovación Tecnológica</h2>
+        <p class="tagline">“Tecnología e innovación al servicio de la sociedad”</p>
+
+        <div class="ornament-separator" aria-hidden="true">
+          <span class="ornament-line"></span>
+          <span class="ornament-diamond"></span>
+          <span class="ornament-line"></span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         ETAPA 3: PÁRRAFO DESCRIPTIVO
+         ============================================================== -->
+    <section class="scroll-stage stage-description" id="stageDesc">
+      <div class="card-clean">
+        <p class="description-text">
+          Con orgullo por el talento, la creatividad y el compromiso de nuestros estudiantes, le invitamos a conocer proyectos tecnológicos que buscan responder a necesidades reales, poniendo la tecnología al servicio de las instituciones y de nuestra comunidad. Será un honor contar con su presencia para compartir los logros y el impacto de este esfuerzo conjunto.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         ETAPA 4: FECHA CON RECORDATORIO AUTOMÁTICO (HORA: 11:00 AM)
+         ============================================================== -->
+    <section class="scroll-stage stage-event-details" id="stageData">
+      
+      <!-- Tarjeta de Fecha con Auto-Tap e Integración a Calendario -->
+      <article class="card-clean date-action-card" id="calendarCard" role="button" tabindex="0" aria-label="Presiona para agregar al calendario del teléfono">
+        
+        <span class="frame-corner fc-tl" aria-hidden="true"></span>
+        <span class="frame-corner fc-tr" aria-hidden="true"></span>
+        <span class="frame-corner fc-bl" aria-hidden="true"></span>
+        <span class="frame-corner fc-br" aria-hidden="true"></span>
+
+        <!-- Icono de Calendario Grande y Detallado -->
+        <div class="feature-icon-badge" aria-hidden="true">
+          <svg class="calendar-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="3" ry="3"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+            <rect x="7" y="14" width="3" height="3" fill="var(--gold-academic)" stroke="none"></rect>
+            <rect x="14" y="14" width="3" height="3" fill="currentColor" stroke="none"></rect>
+          </svg>
+        </div>
+
+        <span class="date-day-label">Sábado</span>
+        <h3 class="date-main-number">14 de Noviembre</h3>
+        <p class="date-sub-text">11:00 AM</p>
+        <p class="date-note-subtle">Favor estar presente minutos antes</p>
+
+        <!-- Botón Integrado de Calendario -->
+        <button type="button" class="btn-add-calendar" id="btnAddCalendar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 5v14M5 12h14"></path>
+          </svg>
+          <span>Agendar en mi Calendario</span>
+        </button>
+
+      </article>
+
+      <!-- ==============================================================
+           ETAPA 5: UBICACIÓN Y BOTONES DIRECTOS (MAPS & WAZE INTEGRADOS)
+           ============================================================== -->
+      <article class="card-clean location-full-card" id="locationCard">
+        
+        <span class="frame-corner fc-tl" aria-hidden="true"></span>
+        <span class="frame-corner fc-tr" aria-hidden="true"></span>
+        <span class="frame-corner fc-bl" aria-hidden="true"></span>
+        <span class="frame-corner fc-br" aria-hidden="true"></span>
+
+        <!-- Icono de Ubicación Grande y Detallado -->
+        <div class="feature-icon-badge" aria-hidden="true">
+          <svg class="location-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3" fill="var(--gold-academic)" stroke="none"></circle>
+          </svg>
+        </div>
+
+        <span class="location-header-label">Lugar del Evento</span>
+        <h3 class="location-place-title">El Rinconcito Español</h3>
+        <p class="location-address-text">
+          Museo del Jamón<br>
+          <strong>29 Avenida 4-16, Zona 7, Quetzaltenango</strong>
+        </p>
+
+        <!-- Botones de Navegación Directa Integrados -->
+        <div class="location-nav-group">
+          <a 
+            href="https://www.google.com/maps/dir/?api=1&destination=14.85406128,-91.52137348&destination_place_id=ChIJwWv3M_yjiYURzO9WKvU8y0Q" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="nav-btn btn-maps"
+            id="btnGoogleMaps"
+            aria-label="Abrir ruta directa en Google Maps hacia El Rinconcito Español"
+          >
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            <span>Cómo llegar con Google Maps</span>
+          </a>
+
+          <a 
+            href="https://waze.com/ul?ll=14.85406128,-91.52137348&navigate=yes" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="nav-btn btn-waze"
+            id="btnWaze"
+            aria-label="Abrir navegación directa en Waze hacia El Rinconcito Español"
+          >
+            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M19.34 9.17c-.45-2.5-2.27-4.52-4.73-5.23C13.29 3.55 12 3.6 12 3.6s-1.29-.05-2.61.34C6.93 4.65 5.11 6.67 4.66 9.17c-.24 1.34.02 2.7.74 3.82.49.77.46 1.76-.05 2.52l-.46.68c-.37.55-.4 1.25-.09 1.83.31.57.92.93 1.57.93h1.8c.3 0 .58.12.78.34.21.22.31.52.28.82-.12 1.21.75 2.31 1.96 2.48 1.38.19 2.59-.78 2.76-2.14.04-.32.19-.61.43-.81.25-.2.56-.3.88-.29 1.33.05 2.46-.95 2.56-2.28.02-.3.15-.59.37-.79.22-.2.51-.3.81-.28h1.25c.66 0 1.27-.36 1.58-.93.31-.58.28-1.28-.09-1.83l-.46-.68c-.51-.76-.54-1.75-.05-2.52.72-1.12.98-2.48.74-3.82zM9 10.5c-.83 0-1.5-.67-1.5-1.5S8.17 7.5 9 7.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm6 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+            </svg>
+            <span>Cómo llegar con Waze</span>
+          </a>
+        </div>
+
+      </article>
+
+    </section>
+
+    <!-- ==============================================================
+         ETAPA 6: CIERRE CON "¡TE ESPERAMOS!" CON RECUADRO JUSTO ENCIMA
+         ============================================================== -->
+    <section class="scroll-stage stage-closure" id="stageClosure">
+      <div class="closure-card-tight">
+        
+        <span class="frame-corner fc-tl" aria-hidden="true"></span>
+        <span class="frame-corner fc-tr" aria-hidden="true"></span>
+        <span class="frame-corner fc-bl" aria-hidden="true"></span>
+        <span class="frame-corner fc-br" aria-hidden="true"></span>
+
+        <!-- Silueta arquitectónica -->
+        <svg class="architectural-silhouette" viewBox="0 0 500 60" preserveAspectRatio="none" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+          <path d="M0 58 H500 M20 58 V42 H45 V58 M55 58 V35 H95 V58 M105 58 V46 H130 V58 M140 58 V28 L165 14 L190 28 V58 M175 14 V8 H180 V14 M200 58 V38 H235 V58 M245 58 V22 H295 V58 M305 58 V44 H335 V58 M345 58 V30 L370 16 L395 30 V58 M405 58 V40 H440 V58 M450 58 V34 H485 V58" stroke-opacity="0.35"/>
+          <path d="M150 36 H180 M150 44 H180 M260 30 H280 M260 38 H280 M260 46 H280 M355 36 H385 M355 44 H385" stroke-opacity="0.25"/>
+        </svg>
+
+        <!-- Frase "¡Te esperamos!" -->
+        <div class="handwritten-sign-container">
+          <div class="handwritten-sign">¡Te esperamos!</div>
+        </div>
+
+        <div class="closure-inner-divider" aria-hidden="true"></div>
+
+        <!-- Texto institucional integrado DENTRO del mismo recuadro -->
+        <p class="closure-inst-text">
+          Facultad de Ingeniería en Sistemas &bull; UMG Quetzaltenango
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Notificación Toast de Recordatorio -->
+  <div id="calendarToast" role="alert" aria-live="polite">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold-academic)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span>¡Recordatorio listo para guardar en tu calendario!</span>
+  </div>
+
+  <!-- ==========================================
+       13. JAVASCRIPT: LOGICA 100% AUTOMÁTICA Y CINEMÁTICA SCROLL
+       ========================================== -->
+  <script>
+    (function() {
+      'use strict';
+
+      const preloader = document.getElementById('preloader');
+      const stages = Array.from(document.querySelectorAll('.scroll-stage'));
+      const scrollHint = document.getElementById('scrollHint');
+      const stageTitle = document.getElementById('stageTitle');
+      const calendarCard = document.getElementById('calendarCard');
+      const btnAddCalendar = document.getElementById('btnAddCalendar');
+      const calendarToast = document.getElementById('calendarToast');
+
+      const mainContainer = document.getElementById('mainContainer');
+      const viewEsHoy = document.getElementById('viewEsHoy');
+      const viewGracias = document.getElementById('viewGracias');
+
+      let hintTimer = null;
+      let hasTriggeredAutoPress = false;
+
+      // ==============================================================
+      // 1. EVALUACIÓN 100% AUTOMÁTICA DE FECHA Y HORA (11:00 AM)
+      // Sábado 14 de Noviembre:
+      // - 00:00 a 17:59: "¡ES HOY!" (11:00 AM)
+      // - 18:00 (6:00 PM) en adelante: "Gracias por ser parte..."
+      // ==============================================================
+      function evaluateEventDateAuto() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const forcedMode = urlParams.get('modo') || urlParams.get('preview');
+
+        if (forcedMode === 'hoy') {
+          showView('hoy');
+          return;
+        }
+        if (forcedMode === 'gracias') {
+          showView('gracias');
+          return;
+        }
+
+        const now = new Date();
+        const month = now.getMonth(); // 10 = Noviembre (0-indexed)
+        const date = now.getDate();   // 14
+        const hours = now.getHours(); // 0 - 23
+
+        if (month === 10 && date === 14) {
+          if (hours >= 18) {
+            showView('gracias');
+          } else {
+            showView('hoy');
+          }
+        } else {
+          showView('invitacion');
+        }
+      }
+
+      function showView(viewType) {
+        if (!mainContainer || !viewEsHoy || !viewGracias) return;
+
+        mainContainer.style.display = 'none';
+        viewEsHoy.style.display = 'none';
+        viewGracias.style.display = 'none';
+        if (scrollHint) scrollHint.style.display = 'none';
+
+        if (viewType === 'hoy') {
+          viewEsHoy.style.display = 'flex';
+        } else if (viewType === 'gracias') {
+          viewGracias.style.display = 'flex';
+        } else {
+          mainContainer.style.display = 'flex';
+          if (scrollHint) scrollHint.style.display = 'inline-flex';
+          initKinematicScroll();
+          startHintTimer();
+        }
+      }
+
+      // 2. Manejo del Preloader
+      const hidePreloader = () => {
+        if (!preloader) return;
+        preloader.classList.add('loaded');
+        setTimeout(() => {
+          preloader.style.display = 'none';
+        }, 650);
+
+        evaluateEventDateAuto();
+      };
+
+      if (document.readyState === 'complete') {
+        setTimeout(hidePreloader, 500);
+      } else {
+        window.addEventListener('load', () => setTimeout(hidePreloader, 500));
+        setTimeout(hidePreloader, 1400);
+      }
+
+      // ==============================================================
+      // 3. INDICADOR "DESLICE HACIA ABAJO" (2s RETARDO)
+      // ==============================================================
+      function startHintTimer() {
+        clearTimeout(hintTimer);
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+        if (currentScroll <= 15) {
+          hintTimer = setTimeout(() => {
+            const recheckScroll = window.pageYOffset || document.documentElement.scrollTop || 0;
+            if (recheckScroll <= 15 && scrollHint && mainContainer.style.display !== 'none') {
+              scrollHint.classList.add('show-hint');
+            }
+          }, 2000);
+        }
+      }
+
+      function stopAndHideHint() {
+        clearTimeout(hintTimer);
+        if (scrollHint) {
+          scrollHint.classList.remove('show-hint');
+        }
+      }
+
+      if (scrollHint && stageTitle) {
+        scrollHint.addEventListener('click', () => {
+          stageTitle.scrollIntoView({ behavior: 'smooth' });
+          stopAndHideHint();
+        });
+      }
+
+      // ==============================================================
+      // 4. CINEMÁTICA SCROLL BI-DIRECCIONAL (FADE-UP AL SCROLLEAR)
+      // ==============================================================
+      let isTicking = false;
+
+      function updateStages() {
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop || 0;
+
+        if (currentScrollY > 15) {
+          stopAndHideHint();
+        } else {
+          startHintTimer();
+        }
+
+        stages.forEach((stage) => {
+          const rect = stage.getBoundingClientRect();
+
+          // Desvanecer hacia arriba
+          if (rect.bottom < vh * 0.36) {
+            stage.classList.remove('is-active');
+            stage.classList.add('is-faded-up');
+          } 
+          // Zona focal activa
+          else if (rect.top <= vh * 0.82 && rect.bottom >= vh * 0.30) {
+            stage.classList.add('is-active');
+            stage.classList.remove('is-faded-up');
+
+            if (stage.id === 'stageData' && !hasTriggeredAutoPress && rect.top <= vh * 0.70) {
+              hasTriggeredAutoPress = true;
+              triggerCalendarAutoPress();
+            }
+          } 
+          // Abajo esperando entrar
+          else {
+            stage.classList.remove('is-active');
+            stage.classList.remove('is-faded-up');
+          }
+        });
+
+        isTicking = false;
+      }
+
+      function triggerCalendarAutoPress() {
+        if (calendarCard) {
+          calendarCard.classList.add('auto-press');
+          setTimeout(() => {
+            calendarCard.classList.remove('auto-press');
+          }, 2800);
+        }
+      }
+
+      function initKinematicScroll() {
+        updateStages();
+
+        window.addEventListener('scroll', () => {
+          if (!isTicking) {
+            window.requestAnimationFrame(updateStages);
+            isTicking = true;
+          }
+        }, { passive: true });
+
+        window.addEventListener('resize', () => {
+          if (!isTicking) {
+            window.requestAnimationFrame(updateStages);
+            isTicking = true;
+          }
+        }, { passive: true });
+      }
+
+      // ==============================================================
+      // 5. RECORDATORIO CALENDARIO AUTOMÁTICO (HORA: 11:00 AM)
+      // ==============================================================
+      function addEventToCalendar(e) {
+        if (e) e.stopPropagation();
+
+        const eventData = {
+          title: "Presentación de Proyectos e Innovación Tecnológica (11:00 AM) - UMG",
+          description: "Invitación Especial a la Presentación de Proyectos de la Facultad de Ingeniería en Sistemas. Hora de inicio: 11:00 AM (favor estar presente minutos antes). Lugar: El Rinconcito Español, Museo del Jamón, Quetzaltenango.",
+          location: "El Rinconcito Español, Museo del Jamón, 29 Avenida 4-16, Zona 7, Quetzaltenango",
+          start: "20261114T170000Z", // 11:00 AM hora Guatemala (UTC-6)
+          end: "20261114T193000Z"    // 01:30 PM hora Guatemala (UTC-6)
+        };
+
+        const icsContent = [
+          "BEGIN:VCALENDAR",
+          "VERSION:2.0",
+          "PRODID:-//UMG Quetzaltenango//Presentacion Proyectos 11AM//ES",
+          "CALSCALE:GREGORIAN",
+          "METHOD:PUBLISH",
+          "BEGIN:VEVENT",
+          `SUMMARY:${eventData.title}`,
+          `DESCRIPTION:${eventData.description}`,
+          `LOCATION:${eventData.location}`,
+          `DTSTART:${eventData.start}`,
+          `DTEND:${eventData.end}`,
+          "STATUS:CONFIRMED",
+          "BEGIN:VALARM",
+          "TRIGGER:-PT2H",
+          "ACTION:DISPLAY",
+          "DESCRIPTION:Recordatorio: Presentación de Proyectos UMG hoy a las 11:00 AM",
+          "END:VALARM",
+          "END:VEVENT",
+          "END:VCALENDAR"
+        ].join("\r\n");
+
+        const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        link.setAttribute('download', 'invitacion-proyectos-umg-11am.ics');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        if (calendarToast) {
+          calendarToast.classList.add('show');
+          setTimeout(() => {
+            calendarToast.classList.remove('show');
+          }, 4000);
+        }
+      }
+
+      if (calendarCard) {
+        calendarCard.addEventListener('click', addEventToCalendar);
+      }
+      if (btnAddCalendar) {
+        btnAddCalendar.addEventListener('click', addEventToCalendar);
+      }
+
+    })();
+  </script>
+</body>
+</html>
